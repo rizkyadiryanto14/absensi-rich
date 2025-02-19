@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Absensi Rich
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://laravel.com" target="_blank">
+    <img src="https://laravel.com/img/logotype.min.svg" alt="Laravel Logo" width="200">
+  </a>
 </p>
 
-## About Laravel
+Sistem Absensi Rich adalah aplikasi absensi berbasis web yang memanfaatkan **Laravel** sebagai framework utama. Sistem ini dirancang untuk memudahkan proses absensi, baik melalui **QR Code** maupun **kartu RFID**. Selain itu, aplikasi juga menyediakan dashboard admin yang menampilkan statistik absensi dan data siswa secara interaktif.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Demo & Tampilan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Halaman Absensi (Scan QR / RFID)**  
+   <img src="https://github.com/rizkyadiryanto14/absensi-rich/blob/main/rich/absensi.png" alt="Halaman Absensi" width="400"/>
 
-## Learning Laravel
+2. **Dashboard Admin**  
+   <img src="https://github.com/rizkyadiryanto14/absensi-rich/blob/main/rich/dashboard.png" alt="Dashboard Admin" width="400"/>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. **Contoh Tampilan Lain**  
+   <img src="https://github.com/rizkyadiryanto14/absensi-rich/blob/main/rich/gambar1.png" alt="Contoh Gambar 1" width="400"/>  
+   <img src="https://github.com/rizkyadiryanto14/absensi-rich/blob/main/rich/gambar2.png" alt="Contoh Gambar 2" width="400"/>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+4. **Manajemen Siswa**  
+   <img src="https://github.com/rizkyadiryanto14/absensi-rich/blob/main/rich/siswa.png" alt="Halaman Siswa" width="400"/>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Fitur Utama
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Scan QR Code**  
+  Memudahkan siswa untuk melakukan absensi dengan memindai QR Code langsung melalui kamera perangkat (menggunakan library [html5-qrcode](https://github.com/mebjas/html5-qrcode)).
 
-### Premium Partners
+- **Scan Kartu RFID**  
+  Alternatif absensi dengan kartu RFID yang juga tercatat secara otomatis.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **Dashboard Admin**  
+  Menyediakan statistik jumlah siswa, rekap absensi harian, serta grafik absensi bulanan (menggunakan [Chart.js](https://www.chartjs.org/)).
 
-## Contributing
+- **Manajemen Siswa**  
+  Tambah, edit, dan hapus data siswa, termasuk informasi orang tua, nomor HP, serta token QR.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Export Data**  
+  Mendukung export data absensi ke format Excel (menggunakan [Maatwebsite Excel](https://github.com/Maatwebsite/Laravel-Excel)).
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Teknologi yang Digunakan
 
-## Security Vulnerabilities
+- **Laravel**  
+  Memanfaatkan keunggulan Laravel seperti routing yang mudah, Eloquent ORM, migration, dan lainnya.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Tailwind CSS**  
+  Untuk tampilan antarmuka yang modern dan responsif.
 
-## License
+- **Yajra DataTables**  
+  Menangani data server-side, pagination, search, dan sort secara efisien.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Maatwebsite Excel**  
+  Mempermudah proses export data absensi ke file Excel.
+
+- **html5-qrcode**  
+  Menggunakan API kamera perangkat (getUserMedia) untuk memindai QR Code secara langsung.
+
+---
+
+## Cara Instalasi & Menjalankan
+
+1. **Clone repository** ini:
+   ```bash
+   git clone https://github.com/rizkyadiryanto14/absensi-rich.git
+
+2. **Masuk kedalam direktori project**
+    ```bash
+    cd absensi-rich
+
+3. **Instal dependency menggunakan Composer**
+   ```bash
+   composer install
+
+4. **Copy file .env dan sesuaikan konfigurasi database**
+     ```bash
+   cp .env.example .env
+5. **Generate Key**
+   ```bash
+   php artisan key:generate
+
+6. **Jalankan migration**
+   ```bash
+   php artisan migrate
+
+7. **Jalankan Server**
+   ```bash
+   php artisan serve
+
