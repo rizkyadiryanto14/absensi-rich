@@ -14,13 +14,19 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#{{ $id }}').DataTable({
+            // Inisialisasi DataTable
+            var table = $('#{{ $id }}').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "{{ $ajaxUrl }}",
                 columns: {!! $columns !!},
                 responsive: true
             });
+
+            // Set interval untuk reload data setiap 5 detik (5000 ms)
+            setInterval(function() {
+                table.ajax.reload(null, false);
+            }, 5000);
         });
     </script>
 @endpush

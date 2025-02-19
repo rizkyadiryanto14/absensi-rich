@@ -20,7 +20,6 @@
                         id="siswa-table"
                         ajaxUrl="{{ route('siswa.getData') }}"
                         :columns="json_encode([
-                            ['data' => 'id', 'name' => 'id'],
                             ['data' => 'rfid_tag', 'name' => 'rfid_tag'],
                             ['data' => 'nama_lengkap', 'name' => 'nama_lengkap'],
                             ['data' => 'alamat', 'name' => 'alamat'],
@@ -32,7 +31,6 @@
                         ])"
                     >
                         <x-slot name="thead">
-                            <th>ID</th>
                             <th>RFID Tag</th>
                             <th>Nama Lengkap</th>
                             <th>Alamat</th>
